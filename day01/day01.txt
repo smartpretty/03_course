@@ -1,0 +1,29 @@
+版本控制管理工具
+集中式版本控制管理
+cvs(concurrent version system) svn
+分布式版本控制管理 
+git()
+
+Unix,收费，不开放源代码
+=>
+Linux：Linus开发
+
+git最初是为了管理linux内核代码而诞生的
+1.shell指令
+  linux中文件夹也叫目录
+  1)pwd,cd,ls
+  pwd:print working directory
+  打印当前所在路径
+  ls:list
+  显示当前目录中的所有非隐藏文件或目录
+  蓝色字体后缀/表示目录;白色字体表示文件;绿色字体后缀*表示可执行文件(以exe结尾的双击可运行的)
+  .lnk后缀表示超链接快捷方式
+  cd directory
+  切换目录
+  cd a 进入到a目录中
+  cd ..进入到上层目录
+  cd a/b/c 进入a中的b中的c目录
+  cd ~ 当前登录用户的主目录
+  在文件名前加.,隐藏文件
+  ls -a 显示隐藏文件
+  ls -lt 以时间排序显示文件
