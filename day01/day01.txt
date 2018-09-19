@@ -18,12 +18,85 @@ git最初是为了管理linux内核代码而诞生的
   显示当前目录中的所有非隐藏文件或目录
   蓝色字体后缀/表示目录;白色字体表示文件;绿色字体后缀*表示可执行文件(以exe结尾的双击可运行的)
   .lnk后缀表示超链接快捷方式
-  cd directory
+  cd directory 
   切换目录
-  cd a 进入到a目录中
+  cd a 进入到a目录中(相对路径)
+  cd /d/a 进入到d盘中的a目录中(绝对路径)
   cd ..进入到上层目录
   cd a/b/c 进入a中的b中的c目录
   cd ~ 当前登录用户的主目录
-  在文件名前加.,隐藏文件
+//在文件名前加.,隐藏文件
   ls -a 显示隐藏文件
-  ls -lt 以时间排序显示文件
+  ls -lt 以时间排序并显示时间和文件
+  ls -t 以时间排序显示文件(从上到下哦)
+  2)mkdir
+  make directory 新建目录
+  mkdir a 新建目录a
+  当a存在时，使用该指令会报错
+  mkdir a/b 在a目录下创建目录b
+  mkdir -p a/b 在a目录下创建目录b,如果a目录不存在,则新建a再新建b
+  3)touch 
+  touch a 新建文件a
+  touch 1.txt
+  touch 2.html
+  touch 3.jpg
+  如果创建的文件(夹)已经存在，则不会创建新的文件(夹)，而是修改该文件(夹)的最后访问时间
+  4)rmdir 
+  remove directory 删除目录(只能删除空目录)
+  rmdir a/b/c 删除a目录下的b目录下的c目录，同时保留a和b
+  5)rm
+  remove 删除文件或非空目录
+  rm a 删除a文件
+  rm -rf a 删除a目录
+  6)vi
+  view 文本编辑器
+  vi a 打开a文件向a里面输入数据(此时无法输入数据)
+  --
+  a/i(进入输入模式)
+  内容
+  内容
+  esc--:wq--enter(保存输入内容并退出vi)
+  :wq write and quit 保存并退出
+  :w  保存不退出
+  :q  在没有修改的情况下直接退出
+  :q! 强制退出不保存
+  ps：
+  输入数据还可以使用回显
+  echo data > 1.txt  =
+  echo data >> 1.txt +=
+  7)cat
+  catch 读取文件路径
+2.git的使用
+所有的git命令都是以git开头的
+1)配置个人信息
+  配置用户名和邮箱
+  git config --global user.name
+  git config --global user.email
+2)初始化本地仓库(03-course)
+  进入目标文件夹:git init (生成.git隐藏文件夹，路径出现master)
+3)查看本地仓库的状态
+git status
+untracked files未暂存状态
+changes to be committed 在暂存区生成了快照等待被提交
+changes not staged for commit 文件已被修改，但是还没有放入暂存区
+4)提交
+1.git add提交到暂存区
+  git add -A 将仓库里的所有有修改的内容全部提交到暂存区
+2.git commit -m "提交信息" 
+
+
+pra
+1.在桌面右键git gash here
+2.切换到d盘，新建文件夹test，切换进去
+3.test下新建文件夹a,b/c,e/d/f
+        新建文件，1.txt,b/2.txt
+4.切换到d文件夹，查看当前目录，删除f文件夹
+5.切换到test，删除e文件夹
+6.使用vi，修改1.txt内容，使用echo修改2.txt内容
+7.查看1.txt,2.txt内容
+8.删除a文件夹
+9.初始化test文件夹为本地仓库
+10.查看本地仓库状态
+11.将本地仓库内容提交到master上
+12。skdfjusfd
+13.siusf
