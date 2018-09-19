@@ -18,3 +18,38 @@ settings--SSH and GPG keys--new SSH key
     git pull 远程仓库地址.git master
 (二)方法二,使用克隆命令,下载的是完整的远程仓库
     git clone 远程仓库地址.git
+
+-------------------------------------------------
+
+AngularJs
+1.什么是AngularJs
+  是一个以数据为驱动的前端框架
+案例1.
+  01_rumen.html
+  在文本框中输入数据，文本框下方显示输入的数据
+  <script src="libs/angular.min.js">
+  </script>
+  <body ng-app>
+  <div>
+  <input type="text" ng-model="a">
+  </div>
+  <div>
+  {{a}} 
+  </div>
+  </body>
+2.Angularjs的表达式
+  {{表达式}}
+  表达式可以包含变量,算术运算,逻辑运算,关系运算,三目运算,字符串拼接
+  02_biaodashi.html
+3.设计模式MVC
+  M:model 模型层(数据层):与数据库之间进行操作
+  V:view 视图层:展示数据,一般通过html展示
+  C:controller 控制层,用于模型层和视图层之间的连接
+4.AngularJs的模块化概念(module)
+  AngularJs构建一个应用程序是以模块化的方式组织的
+  03_modle.html
+  1)引入文件 
+  2)定义应用名称ng-app 
+  3)定义模块 var app=angular.module("app",[]);
+  4)定义控制器 app.controller("ctrl",["$scope",function($scope){}])
+  5)编写视图

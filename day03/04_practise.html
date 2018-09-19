@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="libs/angular.min.js"></script>
+</head>
+<body ng-app="app">
+ <div ng-controller=ctrl1>
+  my name is {{name}},I am {{age}} years old <br>
+  {{arr}},{{info}}
+  {{arr[0]}} <br>
+  {{info.name}}
+ </div> 
+</body>
+<script>
+var app=angular.module("app",[]);
+app.controller("ctrl1",["$scope",function(obj){
+  obj.name="chy";
+  obj.age="18";
+  obj.arr=["a","b","c"];
+  obj.info={like:'sleep',job:'writer',name:'smart'};
+}]);
+</script>
+</html>

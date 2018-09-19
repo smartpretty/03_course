@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="libs/angular.min.js"></script>
+</head>
+<body ng-app="app">
+  <div ng-controller="ctrl">
+    <h1>这是angularJs</h1>
+    {{name}},{{age}}<br>{{arr}}{{obj}}<br>
+    <div>
+      我叫{{stu.name}},今年{{stu.age}}岁,是个{{stu.gender=='M'?"男孩":"女孩"}}
+      
+    </div>
+    <img src="{{path}}">
+  </div>
+</body>
+<script>
+var app=angular.module("app",[]);//创建模块
+//""为ng-app定义的模块的名称,[]元素为字符串,表示该模块依赖的对象
+  app.controller("ctrl",["$scope",function($scope){//创建控制器 
+    //$scope是一个空对象 ={}
+    $scope.name="李白";
+    $scope.age="14";
+    $scope.arr=[14,23,45];
+    $scope.obj={a:1,b:2};
+    $scope.fun=function(){
+      console.log("绑定函数");
+    };
+    //模拟从数据库中获取到的数据;
+    var data ={name:'kick',age:'22',gender:'M'};
+    $scope.stu =data;
+    $scope.path ="../day03/timg (1).jpeg";
+    }]);
+  
+//ctrl表示控制器的名称，[]里"$scope"表示该控制器所依赖的模块，function表示该控制器的功能
+
+</script>
+</html>
