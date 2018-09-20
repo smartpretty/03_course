@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='libs/angular.min.js'></script>
+  <style>
+  #Li1{
+    border: 1px solid red;
+    width: 200px;
+  }
+  .current1{
+    background: pink;
+  }
+  .current2{
+    background: blue;
+  }
+  </style>
+</head>
+<body ng-app='app'>
+  <div ng-controller="ctrl">
+    <ul>
+      <li><input type="button" value="单击" ng-click="fun1()"></li>
+      <li id="Li1" ng-class="{current1:color==1,current2:color==2}" ng-mouseenter="fun2()" ng-mouseleave="fun3()"></li>
+      
+    </ul>
+  </div>
+</body>
+<script>
+  var app = angular.module('app', []);
+  app.controller("ctrl",["$scope",function($scope){
+    $scope.fun1=function(){
+      alert("单击2");
+    };
+    $scope.fun2=function(){
+      $scope.color="1";
+    }; 
+    $scope.fun3=function(){
+      $scope.color="2";
+    }
+  }]);
+</script>
+</html>

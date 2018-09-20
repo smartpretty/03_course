@@ -1,0 +1,55 @@
+第四节
+1.指令
+  1)aj对html标签属性的一个扩展
+  2)指令分为两种：内置指令，自定义指令
+  内置指令：angularJS已经定义好的指令，以ng开头，是angularjs的核心内容
+  3)内置指令
+  A:ng-app:定义应用的名称，一个页面中至少有一个
+  B:ng-model:定义绑定数据的名称 有val属性的标签都可以使用model指令获取其value值
+  C:ng-controller:定义控制器的作用范围
+  D:ng-show/ng-hide:显示/隐藏某个元素
+    ng-show=0/false 隐藏 ng-show=1/true 显示 
+    ng-hide=1/true 隐藏 ng-hide=0/false 显示 
+  E:ng-if:判断元素是否存在
+    ng-if=true 存在
+    ng-if=false 隐藏该元素及其属性
+  F:ng-bind:绑定数据
+  G:ng-checked:默认勾选 true选中,false不选中
+  H:ng-src:路径
+  I:ng-disabled 只读，不可修改
+  J:ng-repeat 遍历数组并将数组的每一个元素以当前节点单独显示出来 
+    <li ng-repeat="key in arr (track by $index)">
+    {{key}}
+    </li>
+  如果数组中出现重复的元素，此方法无法实现，需加上track by $index,其中$index为数组的默认下标
+  K:ng-class 对html中class的封装
+    ng-class=true 显示修饰 ng-class=false 隐藏修饰
+  L:ng-switch 切换元素
+  M:ng-include 引入外部路径,需从服务器访问
+  路径外还要再加上'':ng-include="'head.html'"才能生效
+eg:ng-class="{bgc:$index==1}" ng-hide="$index==2"
+  给数组第2个元素添加修饰bgc,隐藏第三个元素
+  4)自定义指令
+  通过应用模块调用directive方法
+  app.directive();
+  自定义方式有4中：
+  E:element 元素
+  A:atrribute 属性
+  C:class 类名
+  M:mark 注释
+  return里有4种属性：
+      template: 自定义指令返回的数据
+      restrict:"EMAC" 调用的方法 默认只有e和a可以使用。若想调用c和m，需添加另一属性restrict:"C",若不写就默认用EA 
+      replace:true 如果想使用M方法，需添加属性:replace=true,template必须有标签
+      templateUrl:引入外部文件
+二.常见事件
+ng-click 鼠标点击
+ng-mouseenter 鼠标移入
+ng-mouseleave 鼠标移出
+
+三.数据绑定
+1.单向数据绑定
+  在模型层获取数据后，由控制层绑定数据，发送给视图层
+  M->V
+
+  

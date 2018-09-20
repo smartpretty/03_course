@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='libs/angular.min.js'></script>
+  <style>
+  #d{
+    border:1px solid red;
+    width: 100px;height: 100px;
+  }
+  .d1{
+    background: pink;
+  }
+  </style>
+</head>
+<body ng-app='app'>
+  <div ng-include="'head.html'">
+
+  </div>
+<ul ng-controller=ctrl1>
+  <li ng-show="true">这是ng-show</li>
+  <li ng-hide="isshow">这是ng-hide</li>
+  <li ng-if=false>if</li>
+  <li ng-bind="msg"></li>
+  <li>
+    <input type="radio" name="gender" value="M" ng-checked="sex=='M'">男
+    <input type="radio" name="gender" value="F" ng-checked="sex=='F'">女
+  </li>
+  <li>
+    <img ng-src={{path}}>
+  </li>
+  <li ng-repeat="key in arr track by $index">
+    {{key}},{{$index}}
+  </li>
+  <li><div id="d" ng-class="{d1:color=='red'}"></div></li>
+  
+  <li>
+    <select ng-model="val1">
+      <option value="1">江苏</option>
+      <option value="2">浙江</option>
+    </select>
+  </li>
+  <li ng-switch="val1">
+    <select ng-switch-when="1">
+      <option value="1">南京</option>
+      <option value="2">苏州</option>
+      <option value="3">无锡</option>
+    </select>
+    <select ng-switch-when="2">
+      <option value="1">杭州</option>
+      <option value="2">台州</option>
+      <option value="3">嘉兴</option>
+    </select>
+  </li>
+</ul>
+
+</body>
+<script>
+  var app = angular.module('app', []);
+  app.controller("ctrl1",["$scope",function($scope){
+    $scope.isshow=false;
+    $scope.msg="模型层的数据";
+    $scope.sex="M"; 
+    $scope.path="../day03/1.jpeg";
+    $scope.arr=['apple',18,'bdd','bdd'];
+    $scope.color="red";
+  }]);
+</script>
+
+</html>

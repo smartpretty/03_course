@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='libs/angular.min.js'></script>
+  <style>
+  .bgc{
+    background: #aaa;
+  }
+  </style>
+</head>
+<body ng-app='app'>
+  <div ng-controller="ctrl1">
+    <input type="checkbox" name="gender" value="M" ng-checked="select">男
+    <input type="checkbox" name="gender" value="F">女
+    <input type="checkbox" name="gender" value="Unknown">未知<br><br>
+    <img src="{{path}}"><br>
+    <select ng-model="val">
+    <option value="1">HTML</option>
+    <option value="2">CSS</option>
+    <option value="3">JS</option>
+    </select>
+    <div ng-switch="val">
+    <select ng-switch-when="1">
+      <option value="1">HTML初级</option> 
+      <option value="2">HTML中级</option> 
+      <option value="3">HTML高级</option> 
+    </select>
+    </div>
+    <div ng-switch="val">
+    <select ng-switch-when="2">
+      <option value="1">CSS初级</option> 
+      <option value="2">CSS中级</option> 
+      <option value="3">CSS高级</option> 
+    </select>
+    </div>
+    <div ng-switch="val">
+    <select ng-switch-when="3">
+      <option value="1">JS初级</option> 
+      <option value="2">JS中级</option> 
+      <option value="3">JS高级</option> 
+    </select>
+    </div>
+    <br> 
+    <div ng-repeat="key in arr">
+      <div ng-class="{bgc:$index==color}" ng-hide="$index==2">{{key}}</div>
+    </div>
+
+  </div>
+</body>
+<script>
+var app = angular.module('app', []);
+app.controller("ctrl1",["$scope",function($scope){
+  $scope.select="M";
+  $scope.path="../day03/1.jpeg";
+  $scope.arr=[18,'apple','pear','peach'];
+  $scope.color="1";
+}]);
+</script>
+
+</html>

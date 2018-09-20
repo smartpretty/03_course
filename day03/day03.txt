@@ -2,9 +2,8 @@
 1.使用ssh方式关联远程仓库
 https在每次推送时，都需要输入用户名与密码，比较麻烦
 配置ssh:
-查看本机是否要ssh key
-ls -a ~/.ssh
-创建生成密钥: 
+查看本机是否要ssh key :ls -a ~/.ssh
+创建生成密钥: ssh-keygen -t rsa -C "邮箱地址"
 打开公钥，赋值里面的内容：
 admin--.ssh--.pub
 远程仓库：

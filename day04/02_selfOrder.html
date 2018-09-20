@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Document</title>
+  <script src='libs/angular.min.js'></script>
+</head>
+<body ng-app='app'>
+  <div abc></div>
+  <!-- 作为标签使用 -->
+  <div>
+    标签<self-order></self-order>  
+  </div>
+  <!-- 作为属性使用 -->
+  <div>
+    属性<h1 self-order></h1>
+  </div>
+  <!-- 作为类名使用 -->
+  <div> 
+    类名<div class="self-order"></div>
+  </div>
+  <!-- 作为注释使用 -->
+  <div> 
+    注释<!-- directive:self-order -->
+  </div>
+</body>
+<script>
+  var app = angular.module('app', []);
+    /*调用directive方法,该方法有两个参数
+    第一个参数为字符串表示该指令的名称，命名遵循驼峰命名法，调用时，将所有大写字符改成小写同时前面加-
+    第二个参数为function，表示该指令的功能或者作用*/
+  app.directive("selfOrder",function(){
+    return {
+      template:"<p>这是自定义指令返回的数据</p>",
+      restrict:"EMAC",
+      replace:true
+    }
+  });
+  app.directive("abc",function(){
+    return{
+      templateUrl:"head.html"
+     }
+  });
+  
+</script>
+
+</html>
